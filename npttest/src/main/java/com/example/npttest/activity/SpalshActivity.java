@@ -26,6 +26,7 @@ import com.example.npttest.App;
 import com.example.npttest.R;
 import com.example.npttest.constant.Constant;
 import com.example.npttest.manager.ActivityManager;
+import com.example.npttest.server.Heartbeat;
 import com.example.npttest.util.LogUtils;
 import com.example.npttest.util.SPUtils;
 import com.google.zxing.BarcodeFormat;
@@ -124,7 +125,7 @@ public class SpalshActivity extends NoStatusbarActivity implements OnProgressBar
         bindAccount();
         ActivityManager.getInstance().addActivity(this);
         startSplashPb(1000);
-
+        startService(new Intent(SpalshActivity.this, Heartbeat.class));
     }
 
     private void startSplashPb(int delay) {
@@ -422,12 +423,12 @@ public class SpalshActivity extends NoStatusbarActivity implements OnProgressBar
             mPushService.bindAccount(account, new CommonCallback() {
                 @Override
                 public void onSuccess(String s) {
-                    Log.e("TAG", "绑定成功");
+                    Log.e("TAG", "推送账号绑定成功");
                 }
 
                 @Override
                 public void onFailed(String errorCode, String errorMsg) {
-                    Log.e("TAG", "绑定失败");
+                    Log.e("TAG", "推送账号绑定失败");
                 }
             });
         }

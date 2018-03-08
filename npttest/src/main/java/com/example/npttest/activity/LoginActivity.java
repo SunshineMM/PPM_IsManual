@@ -553,6 +553,7 @@ public class LoginActivity extends NoStatusbarActivity implements View.OnClickLi
                                 getdata_insert(sql_user);
                             }
                             Constant.logintype=0;
+                            SPUtils.put(LoginActivity.this, Constant.LOGINTYPE,0);
                             SPUtils.put(LoginActivity.this, Constant.ID,loginEdtId.getText().toString().trim());
                             SPUtils.put(LoginActivity.this, Constant.PASS,MD5Utils.encode(loginEdtPwd.getText().toString().trim()));
                             SPUtils.put(LoginActivity.this, Constant.USERNAME,username);

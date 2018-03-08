@@ -6,4 +6,9 @@
     <color name="bluestyle">#1CB9F0</color>
     <color name="fontcolor">#48495f</color>
     <color name="backguoud">#e9efef</color>
+    <color name="holo_blue">#33b5e5</color>
+    <color name="holo_purple">#aa66cc</color>
+    <color name="holo_green">#99cc00</color>
+    <color name="holo_orange">#ffbb33</color>
+    <color name="holo_red">#ff4444</color>
 </resources>

@@ -20,6 +20,7 @@ import com.example.npttest.activity.QueryCarnum;
 import com.example.npttest.activity.QueryRecord;
 import com.example.npttest.activity.ReleaseRemarks;
 import com.example.npttest.activity.SetCommonCity;
+import com.example.npttest.activity.SetPassageWay;
 import com.example.npttest.constant.Constant;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -60,6 +61,8 @@ public class Fragment3 extends Fragment {
     TextView fg3NewsvTv;
     @Bind(R.id.fg3_newsv_img)
     ImageView fg3NewsvImg;
+    @Bind(R.id.fg3_release_way)
+    LinearLayout fg3ReleaseWay;
     private BluetoothAdapter bluetoothAdapter;
     private int dsv;
     private String updateurl;
@@ -79,7 +82,8 @@ public class Fragment3 extends Fragment {
 
 
     @OnClick({R.id.fg3_query_carnum, R.id.fg3_update, R.id.fg3_setComCity, R.id.fg3_release_remarks,
-            R.id.fg3_setPrinter, R.id.fg3_vehicle_inventory, R.id.fg3_violation_record, R.id.fg3_query_record})
+            R.id.fg3_setPrinter, R.id.fg3_vehicle_inventory, R.id.fg3_violation_record, R.id.fg3_query_record,
+            R.id.fg3_release_way})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.fg3_query_carnum:
@@ -91,7 +95,7 @@ public class Fragment3 extends Fragment {
                     UpdateAppUtils.from(getActivity())
                             .checkBy(UpdateAppUtils.CHECK_BY_VERSION_CODE) //更新检测方式，默认为VersionCode
                             .serverVersionCode(dsv)
-                            .serverVersionName(String.valueOf(((double)dsv)/100))
+                            .serverVersionName(String.valueOf(((double) dsv) / 100))
                             .apkPath("http://" + updateurl)
                             .downloadBy(UpdateAppUtils.DOWNLOAD_BY_APP) //下载方式：app下载、手机浏览器下载。默认app下载
                             .isForce(false) //是否强制更新，默认false 强制更新情况下用户不同意更新则不能使用app
@@ -101,6 +105,7 @@ public class Fragment3 extends Fragment {
                 }
                 break;
             case R.id.fg3_setComCity:
+                //设置常用城市
                 startActivity(new Intent(getActivity(), SetCommonCity.class));
                 break;
             case R.id.fg3_release_remarks:
@@ -125,6 +130,9 @@ public class Fragment3 extends Fragment {
                 break;
             case R.id.fg3_query_record:
                 startActivity(new Intent(getActivity(), QueryRecord.class));
+                break;
+            case R.id.fg3_release_way:
+                startActivity(new Intent(getActivity(), SetPassageWay.class));
                 break;
         }
     }

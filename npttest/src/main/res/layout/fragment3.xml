@@ -244,9 +244,14 @@
         </View>
 
 
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#ccc">
+        </View>
         <LinearLayout
             android:id="@+id/fg3_setPrinter"
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:clickable="true"
@@ -264,6 +269,41 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:text="配置打印机"
+                android:textSize="16dp"
+                android:gravity="center|left"
+                android:textColor="@color/fontcolor"
+                android:layout_marginLeft="15dp"/>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/utils_arrow" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#ccc">
+        </View>
+        <LinearLayout
+            android:id="@+id/fg3_release_way"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:background="@drawable/ripple_button_white_style"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_release_way"
+                android:layout_marginLeft="15dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="通行权限"
                 android:textSize="16dp"
                 android:gravity="center|left"
                 android:textColor="@color/fontcolor"

@@ -30,11 +30,6 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        /*strings.add("放行备注1");
-        strings.add("放行备注2");
-        strings.add("放行备注3");
-        strings.add("放行备注4");
-        strings.add("放行备注5");*/
         Log.e("TAG","Appcreate");
         dbHelper=new DBHelper(this);
         initCloudChannel(this);
@@ -50,13 +45,13 @@ public class App extends Application {
         pushService.register(applicationContext, new CommonCallback() {
             @Override
             public void onSuccess(String response) {
-                Log.e("TAG", "init cloudchannel success");
+                Log.e("TAG", "初始化推送通道成功");
                 //setConsoleText("init cloudchannel success");
             }
 
             @Override
             public void onFailed(String errorCode, String errorMessage) {
-                Log.e("TAG", "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
+                Log.e("TAG", "初始化推送通道失败-- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
                 //setConsoleText("init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
             }
         });

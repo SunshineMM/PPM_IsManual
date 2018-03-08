@@ -20,6 +20,8 @@ public class Constant {
     public static String COM_CITY_A="COM_CITY_A";//保存常用城市
     public static String DEVICE_ADDRESS="device_address";//蓝牙地址0.
     public static String BLUETOOTH_NAME="bluetooth_name";//蓝牙名称
+    public static String SAVE_RELEASE_WAY_BOO="save_release_way";
+    public static String SAVE_RELEASE_WAY_INT="save_release_way";
     public static String URL="url";//请求地址
     public static boolean domeLoginBoo;
     public static String USERNAME="username";//用户名
@@ -58,6 +60,7 @@ public class Constant {
 
     public static long wtime;
     public static int logintype;
+    public static String LOGINTYPE="logintype";
     public static String pvcar;
 
     public static int enfree; //是否设置免费放行的权限
